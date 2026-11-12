@@ -80,23 +80,25 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '0.75rem'
+        flexWrap: 'wrap',
+        gap: '0.5rem'
       }}>
         <span className="badge badge-red" style={{ padding: '0.2rem 0.6rem', fontSize: '0.7rem' }}>NEW SHIPMENT</span>
-        <span>🚢 Next Vessel Departure from Kobe Port: <strong>28th Sept 2026</strong> | 1 JPY = <strong>2.15 LKR</strong></span>
-        <Link to="/customer/requests/new" style={{ color: 'var(--accent)', fontWeight: '700', textDecoration: 'none', marginLeft: '0.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.2rem' }}>
-          Reserve Import Slot <ArrowRight size={14} />
+        <span>🚢 Next Vessel: Kobe Port <strong>28th Sept</strong> | 1 JPY = <strong>2.15 LKR</strong></span>
+        <Link to="/customer/requests/new" style={{ color: 'var(--accent)', fontWeight: '700', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.2rem' }}>
+          Reserve Slot <ArrowRight size={14} />
         </Link>
       </div>
 
       {/* Hero Section */}
-      <section style={{
-        padding: '4rem 2rem 5rem 2rem',
+      <section className="hero-section" style={{
+        padding: '3rem 1.25rem 4rem 1.25rem',
         background: 'radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.16) 0%, rgba(15, 23, 42, 0) 60%), radial-gradient(circle at 10% 80%, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0) 70%)',
         position: 'relative',
-        borderBottom: 'var(--border-color)'
+        borderBottom: 'var(--border-color)',
+        overflow: 'hidden'
       }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
           
           {/* Left Hero Content */}
           <div>
@@ -104,7 +106,14 @@ const Home = () => {
               <Sparkles size={14} style={{ color: 'var(--accent)' }} /> #1 Specialist in Japanese Motorbicycle Imports
             </div>
             
-            <h1 style={{ fontSize: '3.5rem', lineHeight: '1.12', marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '-0.03em' }}>
+            <h1 style={{ 
+              fontSize: 'clamp(2.1rem, 6vw, 3.5rem)', 
+              lineHeight: '1.15', 
+              marginBottom: '1.25rem', 
+              color: '#FFFFFF', 
+              letterSpacing: '-0.03em',
+              wordBreak: 'break-word'
+            }}>
               DIRECT JAPANESE <br />
               <span style={{ 
                 background: 'linear-gradient(135deg, #FFFFFF 0%, #DC2626 100%)',
@@ -115,32 +124,32 @@ const Home = () => {
               </span>
             </h1>
 
-            <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: '1.7', maxWidth: '580px' }}>
+            <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.15rem)', color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.7', maxWidth: '580px' }}>
               Direct Japanese imports featuring <strong>BMW C400GT</strong>, <strong>Kawasaki Ninja ZX-25RR</strong>, <strong>Honda ADV 160</strong>, and <strong>Honda PCX 125cc</strong>. Official USS auction reports, fast vessel shipping, and hassle-free Sri Lanka port clearance.
             </p>
 
-            <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-              <Link to="/vehicles" className="btn btn-crimson" style={{ padding: '1rem 2.2rem', fontSize: '1.05rem', borderRadius: 'var(--radius-md)' }}>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
+              <Link to="/vehicles" className="btn btn-crimson" style={{ padding: '0.85rem 1.8rem', fontSize: '0.98rem', borderRadius: 'var(--radius-md)' }}>
                 Explore Motorbikes <ArrowRight size={18} />
               </Link>
-              <Link to="/customer/requests/new" className="btn btn-navy" style={{ padding: '1rem 2rem', fontSize: '1.05rem', borderRadius: 'var(--radius-md)' }}>
+              <Link to="/customer/requests/new" className="btn btn-navy" style={{ padding: '0.85rem 1.6rem', fontSize: '0.98rem', borderRadius: 'var(--radius-md)' }}>
                 Request Custom Motorbike
               </Link>
             </div>
 
             {/* Micro stats banner */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', paddingTop: '2rem', borderTop: 'var(--border-color)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', paddingTop: '1.75rem', borderTop: 'var(--border-color)' }}>
               <div>
-                <div style={{ fontSize: '1.9rem', fontWeight: '800', color: '#FFFFFF' }}>100%</div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-gray)' }}>USS Inspection Cert</div>
+                <div style={{ fontSize: 'clamp(1.4rem, 4vw, 1.9rem)', fontWeight: '800', color: '#FFFFFF' }}>100%</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-gray)' }}>USS Certified</div>
               </div>
               <div>
-                <div style={{ fontSize: '1.9rem', fontWeight: '800', color: 'var(--accent)' }}>04 Wks</div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-gray)' }}>Fast Vessel Shipping</div>
+                <div style={{ fontSize: 'clamp(1.4rem, 4vw, 1.9rem)', fontWeight: '800', color: 'var(--accent)' }}>04 Wks</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-gray)' }}>Fast Vessel</div>
               </div>
               <div>
-                <div style={{ fontSize: '1.9rem', fontWeight: '800', color: '#FFFFFF' }}>Legal</div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-gray)' }}>Lawyer DMT Reg</div>
+                <div style={{ fontSize: 'clamp(1.4rem, 4vw, 1.9rem)', fontWeight: '800', color: '#FFFFFF' }}>Legal</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-gray)' }}>DMT Lawyer Reg</div>
               </div>
             </div>
           </div>
