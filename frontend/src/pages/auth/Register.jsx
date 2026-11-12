@@ -66,12 +66,14 @@ const Register = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           <div className="form-group">
             <label className="form-label">Full Name</label>
             <div style={{ position: 'relative' }}>
               <input
                 type="text"
+                name="user_full_name"
+                autoComplete="name"
                 className="form-input"
                 placeholder="Kasun Perera"
                 value={fullName}
@@ -88,6 +90,8 @@ const Register = () => {
             <div style={{ position: 'relative' }}>
               <input
                 type="email"
+                name="user_email_address"
+                autoComplete="email"
                 className="form-input"
                 placeholder="kasun@example.com"
                 value={email}
@@ -104,6 +108,8 @@ const Register = () => {
             <div style={{ position: 'relative' }}>
               <input
                 type="tel"
+                name="user_phone_number"
+                autoComplete="tel"
                 className="form-input"
                 placeholder="+94 77 123 4567"
                 value={phone}
@@ -120,6 +126,8 @@ const Register = () => {
             <div style={{ position: 'relative' }}>
               <input
                 type="password"
+                name="user_new_password"
+                autoComplete="new-password"
                 className="form-input"
                 placeholder="At least 6 characters"
                 value={password}
@@ -137,6 +145,8 @@ const Register = () => {
             <div style={{ position: 'relative' }}>
               <input
                 type="password"
+                name="user_confirm_password"
+                autoComplete="new-password"
                 className="form-input"
                 placeholder="Re-enter password"
                 value={confirmPassword}

@@ -49,12 +49,14 @@ const Login = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           <div className="form-group">
             <label className="form-label">Email Address</label>
             <div style={{ position: 'relative' }}>
               <input
                 type="email"
+                name="login_email"
+                autoComplete="username"
                 className="form-input"
                 placeholder="name@example.com"
                 value={email}
@@ -71,6 +73,8 @@ const Login = () => {
             <div style={{ position: 'relative' }}>
               <input
                 type="password"
+                name="login_password"
+                autoComplete="current-password"
                 className="form-input"
                 placeholder="••••••••"
                 value={password}
@@ -90,6 +94,31 @@ const Login = () => {
             )}
           </button>
         </form>
+
+        {/* Quick Demo Credentials Fill */}
+        <div style={{ marginTop: '1.5rem', padding: '0.85rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', textAlign: 'center', fontWeight: '600', textTransform: 'uppercase' }}>
+            Quick Demo Auto-Fill
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+            <button
+              type="button"
+              onClick={() => { setEmail('bhagya@jvims.com'); setPassword('Bhagya123!'); }}
+              className="btn btn-secondary"
+              style={{ fontSize: '0.78rem', padding: '0.35rem 0.5rem', justifyContent: 'center' }}
+            >
+              👑 Admin (Bhagya)
+            </button>
+            <button
+              type="button"
+              onClick={() => { setEmail('customer@jvims.com'); setPassword('Customer123!'); }}
+              className="btn btn-secondary"
+              style={{ fontSize: '0.78rem', padding: '0.35rem 0.5rem', justifyContent: 'center' }}
+            >
+              👤 Customer
+            </button>
+          </div>
+        </div>
 
         <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
           Don't have an account?{' '}
